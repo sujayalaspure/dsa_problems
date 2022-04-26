@@ -1,24 +1,18 @@
 #include <iostream>
-#include<vector>
+#include <vector>
 #include <string> // for string and to_string()
+#include <algorithm>
+#include <queue>
 
 using namespace std;
-bool cmp(string a, string b){
-    return (a+b>=b+a);
+bool cmp(string a, string b)
+{
+    return (a + b >= b + a);
 }
 int main()
 {
-      vector<int> nums={3,30,34,5,9};
-      vector<string> res;
-      for(int a:nums){
-          res.push_back(to_string(a));
-      }
-      sort(res.begin(),res.end(),cmp);
-      string ans;
-      for(int i=0;i<res.size();i++){
-          ans+=res[i];
+    queue<pair<string, int> > q;
+    q.push(make_pair("", 0));
 
-      }
-      cout<<ans<<endl;
-      return 0;
+    return 0;
 }
