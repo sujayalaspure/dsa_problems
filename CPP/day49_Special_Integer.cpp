@@ -3,19 +3,31 @@
 #include <algorithm>
 using namespace std;
 
+bool checkAll(vector<int> arr, int n, int B, int size)
+{
+  int sum = 0;
+  for (int i = 0; i < size; i++)
+  {
+    sum += arr[i];
+  }
+  if (sum > B)
+    return false;
+  for (int i = 1; i < n - size + 1)
+  {
+    sum -= arr[i - 1] + arr[i + k]
+  }
+}
+
 int main()
 {
   vector<int> A = {1, 2, 3, 4, 5};
   int B = 10;
   int n = A.size();
-  sort(A.begin(), A.end());
-  int curr = 0;
-  int cnt = 0;
-  while (curr < B)
+
+  int low = 0, high = n - 1;
+  while (low < high)
   {
-    curr += A[n - 1 - cnt];
-    cnt++;
+    int mid = low + (high - low) / 2;
   }
-  cout << cnt << endl;
   return 0;
 }
