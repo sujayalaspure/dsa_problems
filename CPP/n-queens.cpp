@@ -3,14 +3,11 @@
 using namespace std;
 vector<vector<string> > ans;
 
-void nqueens(vector<vector<char> > &mat, int n, int r, vector<bool> &cols, vector<bool> &left, vector<bool> &right)
-{
-  if (r == n)
-  {
+void nqueens(vector<vector<char> >& mat, int n, int r, vector<bool>& cols, vector<bool>& left, vector<bool>& right) {
+  if (r == n) {
     // print
     vector<string> temp;
-    for (vector<char> i : mat)
-    {
+    for (vector<char> i : mat) {
       string s(i.begin(), i.end());
       temp.push_back(s);
     }
@@ -19,10 +16,8 @@ void nqueens(vector<vector<char> > &mat, int n, int r, vector<bool> &cols, vecto
     return;
   }
 
-  for (int c = 0; c < n; c++)
-  {
-    if (cols[c] == false && left[r - c + n - 1] == false && right[r + c] == false)
-    {
+  for (int c = 0; c < n; c++) {
+    if (cols[c] == false && left[r - c + n - 1] == false && right[r + c] == false) {
       mat[r][c] = 'Q';
       cols[c] = true;
       left[r - c + n - 1] = true;
@@ -36,16 +31,14 @@ void nqueens(vector<vector<char> > &mat, int n, int r, vector<bool> &cols, vecto
   }
 }
 
-int main()
-{
+int main() {
   int n = 4;
   // vector<bool> cols(n);
   // vector<bool> left(n);
   // vector<bool> right(n);
   // vector<vector<string> > ans = {};
 
-  vector<bool>
-      cols(n);
+  vector<bool> cols(n);
   vector<bool> left(n);
   vector<bool> right(n);
   vector<vector<char> > mat(n, vector<char>(n, '.'));
@@ -59,10 +52,8 @@ int main()
   //   cout << endl;
   // }
   nqueens(mat, n, 0, cols, left, right);
-  for (auto a : ans)
-  {
-    for (string i : a)
-    {
+  for (auto a : ans) {
+    for (string i : a) {
       cout << i << endl;
     }
     cout << "--------" << endl;
@@ -71,21 +62,3 @@ int main()
   return 0;
 }
 
-void n - queens(mat[][], N, row)
-{
-  if (row == N)
-  {
-    // print the matrix
-    return;
-  }
-  // Traverse ove the columns
-  for (int c = 0; c < N; c++)
-  {
-    if (canPlace(mat, r, c)) // check function
-    {
-      mat[row][c] = 'Q';           // Place queen
-      n - queens(mat, N, row + 1); // go to next row
-      mat[row][c] = '.';           // backtrack to check all other posibilities
-    }
-  }
-}
