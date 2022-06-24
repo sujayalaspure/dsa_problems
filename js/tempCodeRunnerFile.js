@@ -2,7 +2,7 @@ console.log("start");
 
 function doSomething(callbacks) {
   console.log("doSomething");
-  callbacks();
+  setTimeout(callbacks, 0);
 }
 
 doSomething(function () {
