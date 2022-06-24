@@ -1,25 +1,71 @@
 #include <iostream>
-#include <array>
+#include <vector>
+#include<string.h>
+#include<unordered_map>
 using namespace std;
 
-int main()
-{
 
-  int low = 762354;
-  int high = 1074263548;
-  int mid = (low + high) >> 1;
+void alienWords() {
+  string order = "hlabcdefgijkmnopqrstuvwxyz";
+  unordered_map<char, char> mp;
+  for (int i = 0;i < 26;i++) {
+    char a = i + 'a';
+    mp[a] = order[i];
+  }
 
-  // cout<<"low: "<<low<<endl;
-  // cout<<"high: "<<high<<endl;
-  cout << "mid: " << mid << endl;
+  vector<string>words = { "hello", "leetcode" };
 
-  // array<int,7> myarray{1,8,4,12,5,10,6};
-  // int size=myarray.size();
-  // for (int i=0;i<size;i++){
-  //   for (int j = i+1; j < size; j++)
-  //   {
-  //    cout << myarray[i] << " " << myarray[j] << endl;
+  for (string& a : words) {
+    for (char& b : a) b = mp[b];
+  }
+
+  for (string a : words) cout << a << endl;
+}
+
+
+
+int main() {
+
+  alienWords();
+  // vector<vector<int>> matrix = { {1, -1}, {-1, 1} };
+  // int k = 0;
+  // int n = matrix.size(), m = matrix[0].size();
+  // vector<vector<int>> pf(n, vector<int>(m, 0));
+  // for (int i = 0; i < n; i++) {
+  //   for (int j = 0; j < m; j++) {
+  //     pf[i][j] = matrix[i][j];
+  //     if (j > 0) pf[i][j] += pf[i][j - 1];
+  //   }
+  // }
+  // for (int i = 0; i < n; i++) {
+  //   for (int j = 0; j < m; j++) {
+  //     pf[i][j] = pf[i][j];
+  //     if (i > 0) pf[i][j] += pf[i - 1][j];
+  //   }
+  // }
+
+  // for (int i = 0; i < n; i++) {
+  //   for (int j = 0; j < m; j++) {
+  //     cout << pf[i][j] << " ";
+  //   }
+  //   cout << endl;
+  // }
+
+  // int cnt = 0;
+  // for (int i = 0; i < n; i++) {
+  //   for (int j = 0; j < m; j++) {
+  //     int res = pf[i][j];
+  //     if (i > 0) res -= pf[i - 1][j];
+  //     if (j > 0) res -= pf[i][j - 1];
+  //     if (i > 0 && j > 0) res += pf[i - 1][j - 1];
+  //     cout << res << " ";
+  //     if (res == k) cnt++;
   //   }
 
   // }
+
+  // cout << cnt << endl;
+
+
+
 }
