@@ -1,11 +1,4 @@
-  auto comp = [](pair<int, int> a, pair<int, int> b) {
-    return ((float)a.first / (float)a.second) > ((float)b.first / (float)b.second);
-  };
-  priority_queue<pd, vector<pd>, decltype(comp)> minHeap(comp);
-  int n = A.size();
-  for (int i = 0;i < n;i++) {
-    for (int j = i + 1;j < n;j++) {
-
-      minHeap.push(make_pair(A[i], A[j]));
-    }
-  }
+if (i % coins[i - 1] == 0) {
+    //   dp[1][i] = (int)(i / coins[0]);
+    //   cout << "i=" << i << " " << dp[1][i] << " - ";
+    // }
