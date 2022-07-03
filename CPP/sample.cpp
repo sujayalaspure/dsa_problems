@@ -23,10 +23,65 @@ void alienWords() {
 }
 
 
+int findDuplicate(vector<int> nums) {
+  int slow = nums[0], fast = nums[0];
+  // while (fast != slow) {
+  //   slow = nums[slow];
+  //   fast = nums[nums[fast]];
+  // }
+  do {
+    slow = nums[slow];
+    fast = nums[nums[fast]];
+    cout << slow << " " << fast << endl;
+  } while (fast != slow);
+
+  slow = nums[0];
+  cout << "---" << endl;
+
+  while (fast != slow) {
+    fast = nums[fast];
+    slow = nums[slow];
+    cout << slow << " " << fast << endl;
+
+  }
+
+  return slow;
+}
+
+
+void findMissingandRepeating() {
+  vector<int> A = { 3, 1, 2, 5, 3 };
+  int repeating = A[0];
+  for (int i = 1;i < A.size();i++) {
+    repeating ^= A[i];
+  }
+  for (int i = 1;i <= A.size();i++) {
+    repeating ^= i;
+  }
+  for (int i = 1;i <= A.size();i++) {
+    repeating ^= i;
+  }
+  cout << repeating << endl;
+  // int missing = repeating;
+  // for (int i = 1;i <= A.size();i++) {
+  //   missing^ i;
+
+  // }
+  // missing ^= repeating;
+  // return { missing, repeating };
+}
+
 
 int main() {
 
-  alienWords();
+
+  // cout << findDuplicate({ 1,3,4,2,2 }) << endl;
+
+  findMissingandRepeating();
+
+
+
+  // alienWords();
   // vector<vector<int>> matrix = { {1, -1}, {-1, 1} };
   // int k = 0;
   // int n = matrix.size(), m = matrix[0].size();

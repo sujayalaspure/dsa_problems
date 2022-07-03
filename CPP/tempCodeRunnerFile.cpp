@@ -1,4 +1,3 @@
-if (i % coins[i - 1] == 0) {
-    //   dp[1][i] = (int)(i / coins[0]);
-    //   cout << "i=" << i << " " << dp[1][i] << " - ";
-    // }
+for (int i = 1;i <= A.size();i++) {
+    repeating ^= i;
+  }
