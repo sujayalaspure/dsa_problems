@@ -1,12 +1,15 @@
-console.log("start");
+/ }
+// {
+//   // myfun = 2;
+//   console.log(myfun);
+//   const myfun = 2;
+// }
 
-function doSomething(callbacks) {
-  console.log("doSomething");
-  setTimeout(callbacks, 0);
-}
-
-doSomething(function () {
-  console.log("callback");
-});
-
-console.log("end");
+// // function to return promise
+// function getPromise() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("success");
+//     }, 1000);
+//   });
+// }
