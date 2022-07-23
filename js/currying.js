@@ -6,3 +6,8 @@ let sum = function (a) {
 };
 
 console.log(sum(1)(2)(3)());
+
+// Short ES6 version of the above snippet:
+let sum1 = (a) => (b) => b ? sum1(a + b) : a;
+
+console.log(sum1(1)(2)(3)());

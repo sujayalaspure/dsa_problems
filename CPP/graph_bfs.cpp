@@ -33,6 +33,16 @@ int bfs(int A, vector<vector<int>> B, int s, int d) {
 
 }
 
+
+void dfs(vector<vector<int>>& g, vector<int>& vis, int source) {
+  if (vis[source]) return;
+  vis[source] = true;
+  for (int i = 0;i < g[source].size();i++) {
+    int v = g[source][i];
+    dfs(g, vis, v);
+  }
+}
+
 int main() {
   int A = 6;
   vector<vector<int>> B = { { 6, 3 }, { 6, 1 }, { 5, 1 }, { 5, 2 }, { 3, 4 }, { 4, 2 } };
