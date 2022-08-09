@@ -70,8 +70,6 @@ int main() {
 
   int A = 3;
   vector<vector<int>> B = { {1, 2, 20},{2, 3, 17} };
-
   solve(A, B);
-
   return 0;
 }
