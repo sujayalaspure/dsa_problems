@@ -21,20 +21,17 @@ const throttleFunc = (cb, delay = 1000) => {
   let flag = true
   let lastArgs = null
 
-  const timeerFunc = () => {
-    if (lastArgs === null) flag = true
-    else {
-      cb(...lastArgs)
-      lastArgs = null
-      setTimeout(timeerFunc, delay)
-    }
-  }
-
   return (...args) => {
     if (flag) {
       cb(...args)
       flag = false
-      setTimeout(timeerFunc, delay)
+      setTimeout(() => {
+        if (lastArgs !== null) {
+          cb(...lastArgs)
+          lastArgs = null
+        }
+        flag = true
+      }, delay)
     } else {
       lastArgs = args
     }
